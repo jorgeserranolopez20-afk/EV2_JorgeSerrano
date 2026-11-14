@@ -1,0 +1,48 @@
+{
+  "info": {
+    "name": "ContentFlow API - EP2 BDY0101",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Healthcheck",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:3000/api/health"
+      }
+    },
+    {
+      "name": "2. Obtener Publicaciones",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:3000/api/publicaciones"
+      }
+    },
+    {
+      "name": "3. Crear Publicación (201)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"_id\": \"pub_api_1\",\n  \"usuario_id\": \"user_1\",\n  \"contenido\": \"Creando contenido desde la API REST\",\n  \"categoria\": \"Tecnología\",\n  \"tipo\": \"Texto\"\n}"
+        },
+        "url": "http://localhost:3000/api/publicaciones"
+      }
+    },
+    {
+      "name": "4. Crear Comentario (201)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"_id\": \"comm_api_1\",\n  \"usuario_id\": \"user_1\",\n  \"publicacion_id\": \"pub_api_1\",\n  \"comentario\": \"Primer comentario desde la API\",\n  \"likes\": 15\n}"
+        },
+        "url": "http://localhost:3000/api/comentarios"
+      }
+    }
+  ]
+}
